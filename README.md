@@ -102,7 +102,7 @@ As we are looking to predict if a customer subscribes or not (a boolean result),
 3. DecisionTreeClassifier
 4. SVN
 
-Previouly to start evalauating the above classifiers, this is necessary to find the baseline to define an acceptable lower point of the accuracy. For this purpose, we'll be using DummyClassifier.
+Previouly to start evaluating the above classifiers, it is necessary to find the baseline to define an acceptable lower point of the accuracy. For this purpose, we'll be using DummyClassifier.
 
 Once the DummyClassifier is evaluated, we found the following as result:
 
@@ -133,7 +133,7 @@ The resulting accuracy for KNN classifier is: `88.0311%` with a fitting time of 
 
 #### Modeling using ALL columns plus GridSearchCSV
 
-For this model, we'll be evaluating with all the columns provided looking for the best classifier giving good performance in term of accuracy and fitting time. Here the results:
+During this iteration, we'll be evaluating with all the columns provided looking for the best classifier giving good performance in term of accuracy and fitting time. Here the results:
 
 ![Tabular results](images/tabular_full_results.png)
 
@@ -142,6 +142,8 @@ For this model, we'll be evaluating with all the columns provided looking for th
 When using ALL the features provided in the dataset and passing cross the classifiers mentioned above, we found similar results, but with high differences in the fitting time. Considering the accuracy, precision, recall and fitting time, the `KNN` classifier appear as the best option still.
 
 KNN Test accuracy: `90.49993 %` with a fitting time of `7.79`. 
+
+With the latest results we could see the test accuracy has being improved in comparision with the simple model (`All: 90.49993% vs Simple: 88.0311%`) but the fitting time has being increase from `0.05288` to ``7.79`
 
 
 ## Evaluation
@@ -170,7 +172,7 @@ The resulting values for the `KNN` classifier are as following:
 Test Accuracy Score: `90.4993 %`
 Fitting time: `7.318727016448975`
 
-The fitting time is reduce without impacting the accuracy in comparision with the process using ALL features
+The fitting time is reduced without impacting the accuracy in comparision with the process using ALL features
 
 ### Data Correlation
 
@@ -183,7 +185,7 @@ Based on correlation, the `nr.employed` is highly correlated with `cons.conf.idx
 
 ## Findings
 
-- Considering the first exercise where the data used was limited to 7 features and without performing the lookup of hyperparameters, this was notable the fitting time was better, and the accuracy is not bad. However, when exploring using a second iteration using GridSearchCV to fnd the hyperparameters the accuracy is improved by the fitting time is increase. This is really important to weight up between resolution speed and scoring (accuracy, recall, f1) when choosing the right model for the predictions.
+- Considering the first exercise where the data used was limited to 7 features and without performing the lookup of hyperparameters, this was notable the fitting time was better, and the accuracy is not bad. However, when exploring using a second iteration using GridSearchCV to find the hyperparameters the accuracy is improved but the fitting time is increased. This is really important to weight up between resolution speed and scoring (accuracy, recall, f1) when choosing the right model for the predictions.
 
 - Using permutation importante can help us to reduce the fitting time by reducing the amount of characteristics to be evaluated.
 
